@@ -1,0 +1,37 @@
+[user]
+        email = sergeyrar@gmail.com
+        name = sergey
+
+[color "grep"]
+    linenumber = yellow bold
+    match = red
+    filename = blue bold     
+
+[alias]
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        s = status
+        b = branch -vv
+        co = checkout
+        pr = pull --rebase
+        df = diff-tree --no-commit-id --name-status -r
+        kdiff = difftool --tool=kdiff3 
+        greps = "!git grep -n --color=always \"$1\"  | sed 's#^#'`pwd`/'#' #"
+[core]
+        editor = vim
+        fileMode = false
+[diff]
+        guitool = kdiff3
+[difftool]
+        prompt = false
+[difftool "meld"]
+        cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+        tool = kdiff3
+[push]
+        recurseSubmodules = check
+[mergetool "kdiff3"]
+        path = /usr/bin/kdiff3
+        trustExitCode = false
+[difftool "kdiff3"]
+        path = /usr/bin/kdiff3
+        trustExitCode = false
